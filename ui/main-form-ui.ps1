@@ -1,5 +1,5 @@
 # Call dependencie
-. .\code\main.code.ps1
+. .\code\main-form-code.ps1
 
 # Main Form
 $form = New-Object System.Windows.Forms.Form

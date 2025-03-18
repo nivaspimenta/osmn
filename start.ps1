@@ -4,4 +4,4 @@ Add-Type -AssemblyName System.Drawing
 Clear-Host
 
 # Call the main form
-. .\UI\main.ui.ps1
+. .\UI\main-form-ui.ps1
