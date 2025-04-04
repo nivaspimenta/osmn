@@ -1,4 +1,5 @@
-# Functional functions ------------------------------------------------------------
+# FILE TO NOTE CODE
+
 function Format-GridView {
     [CmdletBinding()]
     param(
