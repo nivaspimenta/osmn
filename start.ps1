@@ -1,7 +1,5 @@
-# Call all the depencies
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
-Clear-Host
+# Call interface script
+. .\scripts\interface.ui.ps1
 
-# Call the main form
-. .\UI\main-form-ui.ps1
+# Call script
+. .\code\main.form.code.ps1
