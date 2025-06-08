@@ -6,11 +6,13 @@ A lightweight, Windows Forms-based GUI tool built with PowerShell to manage esse
 
 ## 🚀 Features
 
-- 🧰 **Process & Service Manager**: Start, stop, or kill processes and services  
-- 🧠 **System Info Viewer**: Monitor CPU, memory, and disk usage  
-- 📆 **Task Scheduler Access**: View and manage scheduled tasks  
-- 🌐 **Network Tools**: View IP, DNS, and connectivity status  
-- 🔐 **User Session Control**: Log off, lock, or shutdown the system  
+- 💻 **Computer Info**: Computer Info, Variables and Paths
+- 🔐 **User Session Control**: Log off, lock, or shutdown the system
+- 🧰 **Process & Service Manager**: Start, stop, or kill processes and services
+- 🧠 **System Info Viewer**: Monitor CPU, memory, and disk usage
+- 📆 **Task Scheduler Access**: View and manage scheduled tasks
+- 🌐 **Network Tools**: View IP, DNS, and connectivity status
+- 📀 **Application Manager**: Applications, Packages and Winget/NuGet
 - 🖱️ **Custom Title Bar**: Fully draggable borderless form
 
 ---
@@ -19,7 +21,6 @@ A lightweight, Windows Forms-based GUI tool built with PowerShell to manage esse
 
 - PowerShell (v7 or higher)
 - .NET Windows Forms (`System.Windows.Forms`)
-- Native Windows tools and WMI/CIM
 
 ---
 

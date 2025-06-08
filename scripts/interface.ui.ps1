@@ -70,6 +70,7 @@ function New-Label {
             $label.Text = if ($param.text) { $param.text } else { 'label' }
             $label.FlatStyle = if ($param.fstyle) { $param.fstyle } else { 'Flat' }
             $label.Forecolor = if ($param.fcolor) { $param.fcolor } else { 'Black' }
+            $label.BackColor = if ($param.bcolor) { $param.bcolor } else { "Black" }
             $label.TextAlign = if ($param.align) { Set-TextAlign -v $param.align } else { [System.Drawing.ContentAlignment]::MiddleLeft }
             $parent.Controls.Add($label)
         }
