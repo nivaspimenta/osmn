@@ -1,8 +1,8 @@
-$form = New-Form @{name="main-form"; size="1080, 660"; text="OSMN"; bcolor="#454446"; showico="$false"; fborstyle="None"}
-$titlebar = New-Titlebar @{name="titlebar"; bcolor="#888B8D"; height="45"} $form
-
 $global:dragging = $false
 $global:dragStart = $null
+
+$form = New-Form @{name="main-form"; size="1080, 660"; text="OSMN"; bcolor="#454446"; showico="$false"; fborstyle="None"}
+$titlebar = New-Titlebar @{name="titlebar"; bcolor="#888B8D"; height="45"} $form
 
 $titlebar.Add_MouseDown({
     if ($_.Button -eq 'Left') {
@@ -51,16 +51,20 @@ $titlebtnclose.Add_Click({
    [void]$form.Dispose()
 })
 
-# Form - Label - Computer Info
-$btnCInfo = New-Label @{name="btnCInfo";text="Computer Info";size="180, 35";location="0,40";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
-$btnCInfo.Add_MouseEnter({
-    $btnCInfo.BackColor = "#666667"
+# Form - Panel - Controls
+$panel = New-Panel @{name="panel";size="890, 610";bstyle="none";location="185, 45";bcolor="#454446"} $form
+
+# Form - Label - System Info
+$btnSInfo = New-Label @{name="btnSInfo";text="System Info";size="180, 35";location="0,40";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
+$btnSInfo.Add_MouseEnter({
+    $btnSInfo.BackColor = "#666667"
 })
-$btnCInfo.Add_MouseLeave({
-    $btnCInfo.BackColor = "#5b5a5c"
+$btnSInfo.Add_MouseLeave({
+    $btnSInfo.BackColor = "#5b5a5c"
 })
-$btnCInfo.Add_Click({
-    
+$btnSInfo.Add_Click({
+    if($panel) { $panel.Controls.Clear() }
+    $controls = .\forms\pnl-systeminfo.ps1 $panel
 })
 
 # Form - Label - User Session Control
@@ -72,7 +76,8 @@ $btnUControl.Add_MouseLeave({
     $btnUControl.BackColor = "#5b5a5c"
 })
 $btnUControl.Add_Click({
-
+    if($panel) { $panel.Controls.Clear() }
+    $controls = .\forms\pnl-usercontrol.ps1 $panel
 })
 
 # Form - Label - Service
@@ -87,20 +92,8 @@ $btnService.Add_Click({
 
 })
 
-# Form - Label - System Info
-$btnSInfo = New-Label @{name="btnSInfo";text="System Info";size="180, 35";location="0,145";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
-$btnSInfo.Add_MouseEnter({
-    $btnSInfo.BackColor = "#666667"
-})
-$btnSInfo.Add_MouseLeave({
-    $btnSInfo.BackColor = "#5b5a5c"
-})
-$btnSInfo.Add_Click({
-
-})
-
 # Form - Label - Task Scheduler
-$btnTScheduler = New-Label @{name="btnTScheduler";text="Task Scheduler";size="180, 35";location="0,180";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
+$btnTScheduler = New-Label @{name="btnTScheduler";text="Task Scheduler";size="180, 35";location="0,145";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
 $btnTScheduler.Add_MouseEnter({
     $btnTScheduler.BackColor = "#666667"
 })
@@ -112,7 +105,7 @@ $btnTScheduler.Add_Click({
 })
 
 # Form - Label - Network Tools
-$btnNTools = New-Label @{name="btnNTools";text="Network Tools";size="180, 35";location="0,215";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
+$btnNTools = New-Label @{name="btnNTools";text="Network Tools";size="180, 35";location="0,180";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
 $btnNTools.Add_MouseEnter({
     $btnNTools.BackColor = "#666667"
 })
@@ -124,7 +117,7 @@ $btnNTools.Add_Click({
 })
 
 # Form - Label - Application Manager
-$btnATools = New-Label @{name="btnATools";text="Applications";size="180, 35";location="0,250";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
+$btnATools = New-Label @{name="btnATools";text="Applications";size="180, 35";location="0,215";bcolor="#5b5a5c";fcolor="white";align="MC"} $form
 $btnATools.Add_MouseEnter({
     $btnATools.BackColor = "#666667"
 })

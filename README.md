@@ -6,7 +6,7 @@ A lightweight, Windows Forms-based GUI tool built with PowerShell to manage esse
 
 ## 🚀 Features
 
-- 💻 **Computer Info**: Computer Info, Variables and Paths
+- 💻 **Computer Info**: Computer Info and variables
 - 🔐 **User Session Control**: Log off, lock, or shutdown the system
 - 🧰 **Process & Service Manager**: Start, stop, or kill processes and services
 - 🧠 **System Info Viewer**: Monitor CPU, memory, and disk usage

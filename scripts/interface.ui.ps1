@@ -84,6 +84,39 @@ function New-Label {
     }
 }
 
+function New-TextBox {
+      [CmdletBinding()]
+    param([hashtable]$param, $parent)
+
+    begin {
+
+    }
+
+    process {
+        try {
+            $textbox = New-object System.Windows.Forms.TextBox
+            $textbox.Name = if ($param.name) { $param.name } else { 'textbox' }
+            $textbox.AutoSize = if($param.asize) { $param.asize } else { $true }
+            $textbox.Multiline = if ($param.mline) { $param.mline } else { $false }
+            $textbox.Location = if ($param.location) { $param.location } else { '10,10' }
+            $textbox.Size = if ($param.size) { $param.size } else { '10, 10' }
+            $textbox.Text = if ($param.text) { $param.text } else { 'textbox' }
+            $textbox.BorderStyle = if ($param.bstyle) { $param.bstyle } else { 'FixedSingle' }
+            $textbox.Forecolor = if ($param.fcolor) { $param.fcolor } else { 'Black' }
+            $textbox.BackColor = if ($param.bcolor) { $param.bcolor } else { "Black" }
+            $textbox.TextAlign = if ($param.align) { $param.align } else { 'Left' }
+            $parent.Controls.Add($textbox)
+        }
+        catch {
+            Write-Host "Error in New-TextBox $($_.Exception.Message)"
+        }
+    }
+
+    end {
+        return $textbox
+    }  
+}
+
 function New-Button {
     [CmdLetBinding()]
     param( [hashtable] $param, $form )
