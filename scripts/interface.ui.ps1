@@ -89,22 +89,25 @@ function New-TextBox {
     param([hashtable]$param, $parent)
 
     begin {
-
+        if (-not $param.fsize) { $param.fsize = 9 }
+        if (-not $param.fname) { $param.fname = "Segoe UI" }
     }
 
     process {
         try {
             $textbox = New-object System.Windows.Forms.TextBox
             $textbox.Name = if ($param.name) { $param.name } else { 'textbox' }
-            $textbox.AutoSize = if($param.asize) { $param.asize } else { $true }
+            $textbox.AutoSize = if(-not $param.asize) { $param.asize } else { $true }
             $textbox.Multiline = if ($param.mline) { $param.mline } else { $false }
             $textbox.Location = if ($param.location) { $param.location } else { '10,10' }
             $textbox.Size = if ($param.size) { $param.size } else { '10, 10' }
             $textbox.Text = if ($param.text) { $param.text } else { 'textbox' }
             $textbox.BorderStyle = if ($param.bstyle) { $param.bstyle } else { 'FixedSingle' }
+            $textbox.Font = New-Object System.Drawing.Font($param.fname, $param.fsize)
             $textbox.Forecolor = if ($param.fcolor) { $param.fcolor } else { 'Black' }
             $textbox.BackColor = if ($param.bcolor) { $param.bcolor } else { "Black" }
             $textbox.TextAlign = if ($param.align) { $param.align } else { 'Left' }
+            $textbox.PlaceholderText = if($param.pht) { $param.pht } else { "Placeholder" }
             $parent.Controls.Add($textbox)
         }
         catch {
