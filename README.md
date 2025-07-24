@@ -20,7 +20,7 @@ A lightweight, Windows Forms-based GUI tool built with PowerShell to manage esse
 ## 💻 Technologies
 
 - PowerShell (v7 or higher)
-- .NET Windows Forms (`System.Windows.Forms`)
+- .NET WPF (`Windows Presentation Foundation`)
 
 ---
 
