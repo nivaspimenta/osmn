@@ -1,0 +1,22 @@
+# Computer info
+CsDNSHostName - Computer Name
+CsManufacturer - Manufacturer
+CsModel - Model
+CsProcessors - Processor Name
+CsTotalPhysicalMemory - RAM
+BiosSerialNumber - Serial Number
+
+OsName - Nome do OS
+OsBuildNumber - Build Number
+OsInstallDate - Installation date
+OsSerialNumber - OS Serial Number
+OsLanguage - Language
+OsArchitecture - Architecture
+
+TimeZone - Time Zone
+PowerPlatformRole - type of power
+
+OsRegisteredUser - Os Registered User (HIDE)
+CsWorkgroup - Domain
+
+# Account Info

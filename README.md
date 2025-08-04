@@ -1,6 +1,6 @@
 # 🖥️ OSMN
 
-A lightweight, Windows Forms-based GUI tool built with PowerShell to manage essential aspects of the Windows operating system. This project simplifies system administration tasks by providing a clean, intuitive interface — no command-line experience required.
+A lightweight, Windows WPF-based GUI tool built with PowerShell to manage essential aspects of the Windows operating system. This project simplifies system administration tasks by providing a clean, intuitive interface — no command-line experience required.
 
 ---
 

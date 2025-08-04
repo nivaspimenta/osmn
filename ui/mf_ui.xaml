@@ -31,7 +31,7 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#545454"/>
-                                <Setter Property="Foreground" Value="Red"/>
+                                <Setter Property="Foreground" Value="#B33720"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -95,29 +95,125 @@
 
         <StackPanel Name="nav_menu_" Grid.Column="0" Grid.Row="1" Margin="1">
             <Button Name="btn_cinfo" Height="30" Margin="1" Content="Computer Info" FontSize="11"/>
-            <Button Name="btn_ainfo" Height="30" Margin="1" Content="Accounnt Info" FontSize="11"/>
+            <Button Name="btn_ainfo" Height="30" Margin="1" Content="Account Info" FontSize="11"/>
             <Button Name="btn_prsvc" Height="30" Margin="1" Content="Process/Services" FontSize="11"/>
             <Button Name="btn_tsche" Height="30" Margin="1" Content="Task Scheduler" FontSize="11"/>
-            <Button Name="btn_netto" Height="30" Margin="1" Content="Network Tools" FontSize="11"/>
-            <Button Name="btn_appma" Height="30" Margin="1" Content="Application Manager" FontSize="11"/>
-            <Button Name="btn_sttgs" Height="30" Margin="1,346,1,1" Content="Settings" FontSize="11"/>
+            <Button Name="btn_netto" Height="30" Margin="1" Content="Network" FontSize="11"/>
+            <Button Name="btn_appma" Height="30" Margin="1" Content="Applications" FontSize="11"/>
+            <Button Name="btn_sttgs" Height="30" Margin="1,441,1,1" Content="Settings" FontSize="11"/>
         </StackPanel>
 
-        <StackPanel Name="wrkplce" Grid.Column="1" Grid.Row="1">
-            <TabControl>
-                <TabItem Header="Home" Visibility="Collapsed">
-                    <TextBlock Text="Welcome to the Home tab!" Padding="10"/>
-                </TabItem>
-                <TabItem Header="Settings" Visibility="Collapsed">
-                    <StackPanel Margin="10">
-                        <TextBlock Text="Settings" FontWeight="Bold"/>
-                        <CheckBox Content="Enable notifications"/>
+        <TabControl Name="tab_window" Grid.Column="1" Grid.Row="1" Background="#242424" BorderThickness="0">
+            <TabItem Name="tab_cinfo" Header="Computer Info" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <Label Name="lbl_cnam" Content="Computer Name" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_cnam" Margin="20,0.5,3,3" Text="CsDNSHostName" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
                     </StackPanel>
-                </TabItem>
-                <TabItem Header="About" Visibility="Collapsed">
-                    <TextBlock Text="This is a sample WPF application." Padding="10"/>
-                </TabItem>
-            </TabControl>
-        </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="1">
+                        <Label Name="lbl_manu" Content="Manufacturer" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_manu" Margin="20,0.5,3,3" Text="CsManufacturer" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.Column="1">
+                        <Label Name="lbl_modl" Content="Model" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_modl" Margin="20,0.5,3,3" Text="CsModel" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.Column="1">
+                        <Label Name="lbl_npro" Content="Processor" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_npro" Margin="20,0.5,3,3" Text="CsProcessors" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Grid.Column="1">
+                        <Label Name="lbl_tram" Content="RAM" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_tram" Margin="20,0.5,3,3" Text="CsTotalPhysicalMemory" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Grid.Column="1">
+                        <Label Name="lbl_csrn" Content="Serial Number" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_csrn" Margin="20,0.5,3,3" Text="BiosSerialNumber" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="8" Grid.Column="1">
+                        <Label Name="lbl_tzone" Content="Time Zone" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_tzone" Margin="20,0.5,3,3" Text="TimeZone" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="9" Grid.Column="1">
+                        <Label Name="lbl_pplr" Content="Power Platform" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_pplr" Margin="20,0.5,3,3" Text="PowerPlatformRole" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="3">
+                        <Label Name="lbl_onam" Content="OS Name" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_onam" Margin="20,0.5,3,3" Text="OsName" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="3">
+                        <Label Name="lbl_blnm" Content="Build Number" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_blnm" Margin="20,0.5,3,3" Text="OsBuildNumber" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.Column="3">
+                        <Label Name="lbl_osit" Content="Install date" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_osit" Margin="20,0.5,3,3" Text="OsInstallDate" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.Column="3">
+                        <Label Name="lbl_osnm" Content="OS Serial Number" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_osnm" Margin="20,0.5,3,3" Text="OsSerialNumber" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" Grid.Column="3">
+                        <Label Name="lbl_oslg" Content="Language" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_oslg" Margin="20,0.5,3,3" Text="OsLanguage" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="6" Grid.Column="3">
+                        <Label Name="lbl_osar" Content="Architecture" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_osar" Margin="20,0.5,3,3" Text="OsArchitecture" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="8" Grid.Column="3">
+                        <Label Name="lbl_ruse" Content="Registered User" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_ruse" Margin="20,0.5,3,3" Text="OsRegisteredUser" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="9" Grid.Column="3">
+                        <Label Name="lbl_wrkg" Content="Workgroup" Foreground="Gray" FontSize="11"/>
+                        <TextBox Name="txt_wrkg" Margin="20,0.5,3,3" Text="CsWorkgroup" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="tab_ainfo" Header="Account Info" Visibility="Collapsed">
+                <StackPanel Margin="10">
+                    <!-- TODO : Account info -->
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

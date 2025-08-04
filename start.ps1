@@ -9,7 +9,7 @@ function Build-Window {
     param([Parameter(Mandatory=$true, HelpMessage="Path to load the window from a xaml file.")][ValidateNotNullOrEmpty()] $XMLPath)
 
     begin {
-        # Nada
+        # Nada //TODO Check Path - Add Try-Cath Exception
     }
 
     process {
