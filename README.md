@@ -21,5 +21,3 @@ A lightweight, Windows WPF-based GUI tool built with PowerShell to manage essent
 
 - PowerShell (v7 or higher)
 - .NET WPF (`Windows Presentation Foundation`)
-
----
