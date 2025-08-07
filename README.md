@@ -23,11 +23,3 @@ A lightweight, Windows WPF-based GUI tool built with PowerShell to manage essent
 - .NET WPF (`Windows Presentation Foundation`)
 
 ---
-
-## 📦 Installation & Usage
-
-1. Clone or download this repository:
-
-```powershell
-git clone https://github.com/nivaspimenta/osmn.git
-```
