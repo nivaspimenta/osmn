@@ -21,13 +21,3 @@ A lightweight, Windows Forms-based GUI tool built with PowerShell to manage esse
 
 - PowerShell (v7 or higher)
 - .NET Windows Forms (`System.Windows.Forms`)
-
----
-
-## 📦 Installation & Usage
-
-1. Clone or download this repository:
-
-```powershell
-git clone https://github.com/nivaspimenta/osmn.git
-```
