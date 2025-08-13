@@ -129,17 +129,17 @@
 
                     <StackPanel Grid.Row="1" Grid.Column="1">
                         <Label Name="lbl_cnam" Content="Computer Name" Foreground="Gray" FontSize="11"/>
-                        <TextBox Name="txt_cnam" Margin="20,0.5,3,3" Text="CsDNSHostName" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                        <TextBox Name="txt_cnam" Margin="20,0.5,3,3" Text="CsDNSHostName" FontSize="11" Padding="3" Background="#545454" Foreground="White" IsReadOnly="True"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="2" Grid.Column="1">
                         <Label Name="lbl_manu" Content="Manufacturer" Foreground="Gray" FontSize="11"/>
-                        <TextBox Name="txt_manu" Margin="20,0.5,3,3" Text="CsManufacturer" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                        <TextBox Name="txt_manu" Margin="20,0.5,3,3" Text="CsManufacturer" FontSize="11" Padding="3" Background="#545454" Foreground="White" IsReadOnly="True"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="3" Grid.Column="1">
                         <Label Name="lbl_modl" Content="Model" Foreground="Gray" FontSize="11"/>
-                        <TextBox Name="txt_modl" Margin="20,0.5,3,3" Text="CsModel" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                        <TextBox Name="txt_modl" Margin="20,0.5,3,3" Text="CsModel" FontSize="11" Padding="3" Background="#545454" Foreground="White" IsReadOnly="True"/>
                     </StackPanel>
 
                     <StackPanel Grid.Row="4" Grid.Column="1">
@@ -157,12 +157,12 @@
                         <TextBox Name="txt_csrn" Margin="20,0.5,3,3" Text="BiosSerialNumber" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="8" Grid.Column="1">
+                    <StackPanel Grid.Row="7" Grid.Column="1">
                         <Label Name="lbl_tzone" Content="Time Zone" Foreground="Gray" FontSize="11"/>
                         <TextBox Name="txt_tzone" Margin="20,0.5,3,3" Text="TimeZone" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="9" Grid.Column="1">
+                    <StackPanel Grid.Row="8" Grid.Column="1">
                         <Label Name="lbl_pplr" Content="Power Platform" Foreground="Gray" FontSize="11"/>
                         <TextBox Name="txt_pplr" Margin="20,0.5,3,3" Text="PowerPlatformRole" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
                     </StackPanel>
@@ -197,14 +197,18 @@
                         <TextBox Name="txt_osar" Margin="20,0.5,3,3" Text="OsArchitecture" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="8" Grid.Column="3">
+                    <StackPanel Grid.Row="7" Grid.Column="3">
                         <Label Name="lbl_ruse" Content="Registered User" Foreground="Gray" FontSize="11"/>
                         <TextBox Name="txt_ruse" Margin="20,0.5,3,3" Text="OsRegisteredUser" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="9" Grid.Column="3">
+                    <StackPanel Grid.Row="8" Grid.Column="3">
                         <Label Name="lbl_wrkg" Content="Workgroup" Foreground="Gray" FontSize="11"/>
                         <TextBox Name="txt_wrkg" Margin="20,0.5,3,3" Text="CsWorkgroup" FontSize="11" Padding="3" Background="#545454" Foreground="White"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Name="btn_cisv" Height="30" Width="140" Content="Save" FontSize="11"/>
                     </StackPanel>
 
                 </Grid>

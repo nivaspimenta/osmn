@@ -20,6 +20,8 @@ $btn_sttgs = $window.FindName("btn_sttgs")
 ## Tabcontrol
 $tab_forms = $window.FindName("tab_window")
 
+## Button Save - ComputerInfo
+$btn_cisv = $window.FindName("btn_cisv")
 
 # Styles
 $stl_navbtn = $window.Resources["NavButton"]
@@ -41,29 +43,52 @@ $btn_netto.Style = $stl_navbtn
 $btn_appma.Style = $stl_navbtn
 $btn_sttgs.Style = $stl_sttngs
 
-# Functions & Methods
+## Button Save - ComputerInfo
+$btn_cisv.Style = $stl_navbtn
 
-function Join-ComputerInfo {
+# Functions, Methods & others
+
+function CInfoLoad {
+    param ()
+
+    # Check if is on the right tab
+    if($tab_forms.SelectedIndex -ne 0) { return }
+
+    # Load the computer information
+    $CINFO = Get-ComputerInfo | Select-Object -Property CsDNSHostName, CsManufacturer, CsModel, `
+    CsProcessors, CsTotalPhysicalMemory, BiosSerialNumber, OsName, OsBuildNumber, OsInstallDate, OsSerialNumber, `
+    OsLanguage, OsArchitecture, TimeZone, PowerPlatformRole, OsRegisteredUser, CsWorkgroup
+
+    # Assign the values to each textbox
+    $window.FindName("txt_cnam").Text = $CINFO.CsDNSHostName
+    $window.FindName("txt_manu").Text = $CINFO.CsManufacturer
+    $window.FindName("txt_npro").Text = $CINFO.CsProcessors
+
+    
+}
+
+# Navigate menu
+$MoveToMenu = {
     [CmdletBinding()]
-    param()
+    param($sender)
 
-    begin {
-        
-    }
-
-    process {
-
-    }
-
-    end {
-
+    switch ($sender.Name) {
+        "btn_cinfo" { 
+            $tab_forms.SelectedIndex = 0 
+            CInfoLoad
+        }
+        "btn_ainfo" { $tab_forms.SelectedIndex = 1 }
+        "btn_prsvc" { $tab_forms.SelectedIndex = 2 }
+        "btn_tsche" { $tab_forms.SelectedIndex = 3 }
+        "btn_netto" { $tab_forms.SelectedIndex = 4 }
+        "btn_appma" { $tab_forms.SelectedIndex = 5 }
+        "btn_sttgs" { $tab_forms.SelectedIndex = 6 }
     }
 
 }
 
 ### Buttons
 # Titlebar
-
 $app_tltbr.Add_MouseLeftButtonDown({
     $window.DragMove()
 })
@@ -77,14 +102,13 @@ $btn_clbtn.Add_Click({
 })
 
 # Navigation Menu
-$btn_cinfo.Add_Click({
-    $tab_forms.SelectedIndex = 0
-})
-
-$btn_ainfo.Add_Click({
-    $tab_forms.SelectedIndex = 1
-})
-
+$btn_cinfo.Add_Click($MoveToMenu)
+$btn_ainfo.Add_Click($MoveToMenu)
+$btn_prsvc.Add_Click($MoveToMenu)
+$btn_tsche.Add_Click($MoveToMenu)
+$btn_netto.Add_Click($MoveToMenu)
+$btn_appma.Add_Click($MoveToMenu)
+$btn_sttgs.Add_Click($MoveToMenu)
 
 # Show the window
 [void]$window.ShowDialog()
